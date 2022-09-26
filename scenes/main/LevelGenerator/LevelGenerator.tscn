@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://rxapf85thowy"]
+
+[ext_resource type="Script" path="res://scenes/main/LevelGenerator/LevelGenerator.gd" id="1_b5xn1"]
+
+[node name="LevelGenerator" type="Node2D" node_paths=PackedStringArray("count_text")]
+script = ExtResource("1_b5xn1")
+count_text = NodePath("TextEdit")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 185.0
+offset_top = 536.0
+offset_right = 318.0
+offset_bottom = 567.0
+scale = Vector2(2.16, 2.16)
+text = "Generate Levels
+"
+
+[node name="ClearLevelsButton" type="Button" parent="."]
+offset_left = 161.0
+offset_top = 261.0
+offset_right = 326.0
+offset_bottom = 292.0
+scale = Vector2(2, 2)
+text = "Clear Existing Levels"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+custom_minimum_size = Vector2i(150, 50)
+offset_left = 259.0
+offset_top = 462.0
+offset_right = 409.0
+offset_bottom = 512.0
+text = "50"
+placeholder_text = "Count"
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="ClearLevelsButton" to="." method="_on_clear_levels_button_button_up"]

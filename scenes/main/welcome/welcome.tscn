@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmt6txwrgxum4"]
+
+[ext_resource type="Script" path="res://scenes/main/welcome/welcome.gd" id="1_qkss7"]
+
+[node name="welcome" type="Node2D"]
+process_priority = -2
+script = ExtResource("1_qkss7")
+
+[node name="button_play" type="Button" parent="."]
+offset_left = 242.0
+offset_top = 706.0
+offset_right = 425.0
+offset_bottom = 833.0
+theme_override_font_sizes/font_size = 87
+text = "Play"
+
+[connection signal="button_up" from="button_play" to="." method="_on_button_play_button_up"]
