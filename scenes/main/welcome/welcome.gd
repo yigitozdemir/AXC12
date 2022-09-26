@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready():
+	($AnimationPlayer as AnimationPlayer).play("sword")
 	var file = File.new()
 	if file.file_exists(GameConstants.LevelFileName) != true:
 		print("file does not exists")
@@ -16,6 +17,7 @@ func _ready():
 		file.close()
 		#print("Current level: " + str(GameConstants.CurrentLevel))
 	#file.flush()
+	$Label.text = "Level " + str(GameConstants.CurrentLevel)
 	pass
 
 

@@ -11,6 +11,7 @@
    sodipodi:docname="drawing.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
@@ -24,9 +25,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="6.2502245"
-     inkscape:cx="65.99763"
-     inkscape:cy="621.25769"
+     inkscape:zoom="0.78127806"
+     inkscape:cx="151.67455"
+     inkscape:cy="465.90326"
      inkscape:window-width="1842"
      inkscape:window-height="1057"
      inkscape:window-x="-8"
@@ -34,7 +35,52 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
-     id="defs2" />
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2849">
+      <stop
+         style="stop-color:#4779ff;stop-opacity:0.81735158;"
+         offset="0"
+         id="stop2845" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.44292241;"
+         offset="1"
+         id="stop2847" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient2564">
+      <stop
+         style="stop-color:#aec4ff;stop-opacity:1;"
+         offset="0"
+         id="stop2560" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="1"
+         id="stop2562" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2564"
+       id="linearGradient2566"
+       x1="158.77953"
+       y1="64.655518"
+       x2="174.31615"
+       y2="109.43546"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.83066936,0,0,1.0008821,24.877073,-0.07562302)" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient2849"
+       id="linearGradient2626"
+       gradientUnits="userSpaceOnUse"
+       x1="158.36812"
+       y1="63.178284"
+       x2="174.31615"
+       y2="109.43546"
+       gradientTransform="matrix(0.29102744,0,0,0.24315514,110.5017,77.814229)" />
+  </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
@@ -104,5 +150,36 @@
          x="45.258865"
          y="155.41272" />
     </g>
+    <g
+       id="g2879"
+       inkscape:label="bubble"
+       transform="translate(-33.188141,-34.690902)"
+       inkscape:export-filename="bubble.png.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
+      <ellipse
+         style="fill:none;stroke:url(#linearGradient2566);stroke-width:0.410608;stroke-dasharray:none;stroke-opacity:1"
+         id="path1010"
+         cx="165.70972"
+         cy="85.728432"
+         rx="18.698118"
+         ry="22.529556"
+         inkscape:label="outer" />
+      <ellipse
+         style="fill:none;stroke:url(#linearGradient2626);stroke-width:0.410523;stroke-linecap:butt;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="circle2624"
+         cx="159.84283"
+         cy="98.659538"
+         rx="6.550941"
+         ry="5.4733491"
+         inkscape:label="inner" />
+    </g>
+    <rect
+       style="fill:#666666;stroke:none;stroke-width:0.523081;stroke-linecap:butt;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect3011"
+       width="10.836945"
+       height="16.255417"
+       x="49.104904"
+       y="115.81983" />
   </g>
 </svg>
