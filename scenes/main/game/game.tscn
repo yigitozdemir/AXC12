@@ -1,13 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://csq431aveeuv"]
+[gd_scene load_steps=5 format=3 uid="uid://csq431aveeuv"]
 
-[ext_resource type="Texture2D" uid="uid://gtqg685ble8f" path="res://img/center.png" id="1_138jd"]
 [ext_resource type="Script" path="res://scenes/main/game/game.gd" id="1_eo2d0"]
-[ext_resource type="Script" path="res://scenes/main/game/center.gd" id="2_qiwsv"]
+[ext_resource type="PackedScene" uid="uid://cbi6cvfbkhdgt" path="res://scenes/items/center/center.tscn" id="2_os3pg"]
 [ext_resource type="PackedScene" uid="uid://durfx8ipfgjuh" path="res://scenes/items/sword/sword.tscn" id="3_tirux"]
 [ext_resource type="Script" path="res://scenes/main/game/sword_handler.gd" id="4_s0arl"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_o671p"]
-radius = 121.037
 
 [node name="game" type="Node2D" node_paths=PackedStringArray("sword_handler")]
 script = ExtResource("1_eo2d0")
@@ -16,18 +12,7 @@ current_level = 1
 
 [node name="LevelTimer" type="Timer" parent="."]
 
-[node name="center" type="Area2D" parent="."]
-position = Vector2(324, 309)
-z_index = 2
-collision_mask = 2
-script = ExtResource("2_qiwsv")
-rotation_speed = 4.0
-
-[node name="Sprite2d" type="Sprite2D" parent="center"]
-texture = ExtResource("1_138jd")
-
-[node name="CollisionShape2d" type="CollisionShape2D" parent="center"]
-shape = SubResource("CircleShape2D_o671p")
+[node name="center" parent="." instance=ExtResource("2_os3pg")]
 
 [node name="sword_handler" type="Node2D" parent="."]
 position = Vector2(324, 928)

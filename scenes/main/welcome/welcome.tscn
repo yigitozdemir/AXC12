@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmt6txwrgxum4"]
+[gd_scene load_steps=14 format=3 uid="uid://bmt6txwrgxum4"]
 
 [ext_resource type="Script" path="res://scenes/main/welcome/welcome.gd" id="1_qkss7"]
 [ext_resource type="Texture2D" uid="uid://c35holomnhcp" path="res://img/play_bg.png" id="2_rohjk"]
 [ext_resource type="Texture2D" uid="uid://bb8kggc76ctcy" path="res://img/bubble.png.png" id="2_vdcbw"]
 [ext_resource type="PackedScene" uid="uid://durfx8ipfgjuh" path="res://scenes/items/sword/sword.tscn" id="3_1ihot"]
+[ext_resource type="PackedScene" uid="uid://cbi6cvfbkhdgt" path="res://scenes/items/center/center.tscn" id="5_vbh87"]
 
 [sub_resource type="Gradient" id="Gradient_i7m2f"]
 offsets = PackedFloat32Array(0, 0.230769, 0.530769, 0.819231, 1)
@@ -86,8 +87,7 @@ process_material = SubResource("ParticleProcessMaterial_yfm4y")
 texture = ExtResource("2_vdcbw")
 
 [node name="sword" parent="." instance=ExtResource("3_1ihot")]
-position = Vector2(324, 270)
-rotation = 0.252526
+position = Vector2(327, 442)
 monitoring = false
 monitorable = false
 
@@ -105,5 +105,9 @@ offset_right = 387.0
 offset_bottom = 664.0
 theme_override_font_sizes/font_size = 36
 text = "Level:"
+
+[node name="center" parent="." instance=ExtResource("5_vbh87")]
+position = Vector2(332, 192)
+scale = Vector2(0.77379, 0.77379)
 
 [connection signal="button_up" from="button_play" to="." method="_on_button_play_button_up"]

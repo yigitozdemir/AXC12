@@ -16,6 +16,7 @@ func button_clicked():
 func delete_level_info():
 	var dir = Directory.new()
 	var file = File.new()
+	
 	if file.file_exists(GameConstants.LevelFileName):
 		dir.open("user://")
 		dir.remove(GameConstants.LevelFileName)
