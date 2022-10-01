@@ -15,3 +15,4 @@ func _process(delta):
 func spawn():
 	var instance = loaded_sword_scene.instantiate()
 	add_child(instance)
+	
