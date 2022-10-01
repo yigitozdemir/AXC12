@@ -88,6 +88,7 @@ texture = ExtResource("2_vdcbw")
 
 [node name="sword" parent="." instance=ExtResource("3_1ihot")]
 position = Vector2(327, 442)
+rotation = -0.349066
 monitoring = false
 monitorable = false
 

@@ -21,11 +21,9 @@ func _process(delta):
 func _on_sword_area_entered(area: Area2D):
 	if area.collision_layer == 2:
 		get_parent().get_parent().game_over()
-	if area.name == "center":
+	if area.collision_layer == 1:
 		#disconnect("on_sword_hit_center", get_parent().get_parent()._on_sword_on_sword_hit_center())
-		get_parent().call("spawn")
-		get_parent().get_parent().level.target_knives -= 1
-		get_parent().get_parent().refresh_label()
+		
 		var _prevPos = global_position;
 		thrown = false
 		get_parent().remove_child(self)
