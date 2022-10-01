@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://csq431aveeuv"]
+[gd_scene load_steps=7 format=3 uid="uid://csq431aveeuv"]
 
 [ext_resource type="Script" path="res://scenes/main/game/game.gd" id="1_eo2d0"]
 [ext_resource type="PackedScene" uid="uid://cbi6cvfbkhdgt" path="res://scenes/items/center/center.tscn" id="2_os3pg"]
 [ext_resource type="PackedScene" uid="uid://durfx8ipfgjuh" path="res://scenes/items/sword/sword.tscn" id="3_tirux"]
 [ext_resource type="Script" path="res://scenes/main/game/sword_handler.gd" id="4_s0arl"]
 [ext_resource type="Texture2D" uid="uid://c35holomnhcp" path="res://img/play_bg.png" id="5_eph3k"]
+[ext_resource type="Script" path="res://admob-lib/admob.gd" id="6_el83b"]
 
 [node name="game" type="Node2D" node_paths=PackedStringArray("sword_handler")]
 script = ExtResource("1_eo2d0")
@@ -59,6 +60,9 @@ theme_override_font_sizes/font_size = 20
 text = "Watch an ad and keep playing"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AdMob" type="Node" parent="."]
+script = ExtResource("6_el83b")
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="button_up" from="fail/TextureRect/CenterContainer/BtnOneMoreChange" to="." method="_on_btn_one_more_change_button_up"]

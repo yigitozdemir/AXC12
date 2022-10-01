@@ -9,12 +9,18 @@
 config_version=5
 
 _global_script_classes=[{
+"base": "Node",
+"class": &"AdMob",
+"language": &"GDScript",
+"path": "res://admob-lib/admob.gd"
+}, {
 "base": "Resource",
 "class": &"Level",
 "language": &"GDScript",
 "path": "res://script/Level.gd"
 }]
 _global_script_class_icons={
+"AdMob": "res://admob-lib/icon.png",
 "Level": ""
 }
 
