@@ -33,6 +33,7 @@ func game_over():
 	game_stopped = true
 	if player_retried_level == false:
 		$fail/TextureRect.position.y = 0
+		($AnimationPlayer as AnimationPlayer).play("ShowNoThanks")
 	else:
 		get_tree().change_scene_to_file("res://scenes/main/game_over/game_over.tscn")
 	pass
@@ -87,7 +88,14 @@ func do_swords_colliding() -> bool:
 	return false
 
 func _on_btn_one_more_change_button_up():
+	if OS.get_name() == "Android":
+		$AdMob.load_rewarded_video()
+		$AdMob.show_rewarded_video()
 	#$fail/TextureRect.position.y = -1152
+	else:
+		_on_ad_mob_rewarded("u", 1)
+
+func _on_ad_mob_rewarded(currency, amount):
 	$fail/TextureRect.position.y = -get_viewport_rect().size.y
 	level.target_knives += 1
 	refresh_label()
@@ -102,3 +110,14 @@ func _on_btn_one_more_change_button_up():
 					if area.collision_layer == 2:
 						area.queue_free()
 						return
+	pass # Replace with function body.
+
+
+func _on_ad_mob_rewarded_video_failed_to_load(error_code):
+	print(str(error_code))
+	pass # Replace with function body.
+
+
+func _on_btn_no_thanks_button_up():
+	get_tree().change_scene_to_file("res://scenes/main/game_over/game_over.tscn")
+	pass # Replace with function body.

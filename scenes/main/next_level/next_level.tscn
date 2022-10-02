@@ -21,4 +21,13 @@ offset_bottom = 608.0
 theme_override_font_sizes/font_size = 52
 text = "You Won!"
 
+[node name="Button_reset_level_info" type="Button" parent="."]
+offset_left = 224.0
+offset_top = 274.0
+offset_right = 424.0
+offset_bottom = 314.0
+theme_override_font_sizes/font_size = 23
+text = "Reset Level Infow"
+
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Button_reset_level_info" to="." method="_on_button_reset_level_info_button_up"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://csq431aveeuv"]
+[gd_scene load_steps=9 format=3 uid="uid://csq431aveeuv"]
 
 [ext_resource type="Script" path="res://scenes/main/game/game.gd" id="1_eo2d0"]
 [ext_resource type="PackedScene" uid="uid://cbi6cvfbkhdgt" path="res://scenes/items/center/center.tscn" id="2_os3pg"]
@@ -6,6 +6,27 @@
 [ext_resource type="Script" path="res://scenes/main/game/sword_handler.gd" id="4_s0arl"]
 [ext_resource type="Texture2D" uid="uid://c35holomnhcp" path="res://img/play_bg.png" id="5_eph3k"]
 [ext_resource type="Script" path="res://admob-lib/admob.gd" id="6_el83b"]
+
+[sub_resource type="Animation" id="Animation_tdutx"]
+resource_name = "ShowNoThanks"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fail/TextureRect/CenterContainer2/BtnNoThanks:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b2ipc"]
+_data = {
+"ShowNoThanks": SubResource("Animation_tdutx")
+}
 
 [node name="game" type="Node2D" node_paths=PackedStringArray("sword_handler")]
 script = ExtResource("1_eo2d0")
@@ -59,10 +80,36 @@ offset_bottom = 36.0
 theme_override_font_sizes/font_size = 20
 text = "Watch an ad and keep playing"
 
+[node name="CenterContainer2" type="CenterContainer" parent="fail/TextureRect"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 321.0
+offset_bottom = 357.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BtnNoThanks" type="Button" parent="fail/TextureRect/CenterContainer2"]
+visible = false
+layout_mode = 2
+offset_left = 240.0
+offset_right = 408.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 20
+text = "No Thanks, I lost"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_b2ipc")
+}
 
 [node name="AdMob" type="Node" parent="."]
 script = ExtResource("6_el83b")
 
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="button_up" from="fail/TextureRect/CenterContainer/BtnOneMoreChange" to="." method="_on_btn_one_more_change_button_up"]
+[connection signal="button_up" from="fail/TextureRect/CenterContainer2/BtnNoThanks" to="." method="_on_btn_no_thanks_button_up"]
+[connection signal="rewarded" from="AdMob" to="." method="_on_ad_mob_rewarded"]
+[connection signal="rewarded_video_failed_to_load" from="AdMob" to="." method="_on_ad_mob_rewarded_video_failed_to_load"]
